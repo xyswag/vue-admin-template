@@ -27,7 +27,7 @@ module.exports = {
   publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'static',
-  lintOnSave: process.env.NODE_ENV === 'development',
+  lintOnSave: false,  // 关闭eslint  // process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
     port: port,
@@ -35,6 +35,16 @@ module.exports = {
     overlay: {
       warnings: false,
       errors: true
+    },
+    proxy: {
+      '/api': {
+        target: 'http://192.168.1.24:8065', //接口地址
+        ws: true, // 是否代理
+        changeOrigin: true, // 设置是否允许跨域，默认为false
+        pathRewrite:{
+          '^/api':''
+        }
+      },
     },
     before: require('./mock/mock-server.js')
   },

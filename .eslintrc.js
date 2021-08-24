@@ -26,7 +26,7 @@ module.exports = {
     "vue/name-property-casing": ["error", "PascalCase"],
     "vue/no-v-html": "off",
     'accessor-pairs': 2,
-    'arrow-spacing': [2, {
+    'arrow-spacing': [4, {
       'before': true,
       'after': true
     }],
@@ -180,7 +180,7 @@ module.exports = {
       'nonwords': false
     }],
     'spaced-comment': [2, 'always', {
-      'markers': ['global', 'globals', 'eslint', 'eslint-disable', '*package', '!', ',']
+      'markers': ['global', 'globals', 'eslint', '', '*package', '!', ',']
     }],
     'template-curly-spacing': [2, 'never'],
     'use-isnan': 2,

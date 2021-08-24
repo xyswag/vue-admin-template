@@ -15,6 +15,23 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+import axios from 'axios';
+Vue.prototype.$axios = axios;
+
+// 全局变量
+import global_ from '@/utils/global';
+Vue.prototype.GLOBAL = global_;
+
+// echarts图表
+import ECharts from 'vue-echarts';
+import 'echarts';
+Vue.component('v-chart', ECharts);
+
+// 打印
+import print from 'print-js';
+import 'print-js/dist/print.css'
+Vue.prototype.$print = print;
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
