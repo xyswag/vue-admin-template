@@ -80,6 +80,25 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/bogu',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'BoGu',
+        meta: { title: '博古园林教学资源包', icon: 'dashboard' },
+        component: () => import('@/views/bogu/index'),
+      },
+      {
+        path: '/bookDetail/detail/:id',
+        name: 'BookDetail',
+        meta: { title: '书籍内容', icon: 'dashboard' },
+        component: () => import('@/views/bogu/bookDetail/detail'),
+        hidden: true
+      }
+    ]
+  },
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
